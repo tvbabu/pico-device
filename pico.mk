@@ -34,9 +34,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 # Indcluded Packages
-# Need to delete libaudio
+# I don't test building with libaudio, i use proprietary
+#     libaudio \
 PRODUCT_PACKAGES += \
-    libaudio \
     librs_jni \
     libcamera \
     lights.pico \
@@ -87,6 +87,7 @@ PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/libril.so:obj/lib/libril.so \
 
 # Prebuilt Binaries
+# I think we don't need this !
 PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/bin/awb_camera:system/bin/awb_camera \
     vendor/htc/pico/proprietary/bin/bma150_usr:system/bin/bma150_usr \
@@ -110,7 +111,9 @@ PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/bin/wireless_modem:system/xbin/wireless_modem \
     vendor/htc/pico/proprietary/bin/zchgd:system/bin/zchgd \
 
+   
 # Prebuilt Modules
+# Some clean
 PRODUCT_COPY_FILES += \
     device/htc/pico/files/bcm4330.ko:system/lib/modules/bcm4330.ko \
     device/htc/pico/files/kineto_gan.ko:system/lib/modules/kineto_gan.ko \
@@ -129,6 +132,7 @@ PRODUCT_COPY_FILES += \
     device/htc/pico/files/etc/vold.fstab:system/etc/vold.fstab \
 
 # Audio
+# Added audio libs from stock ;)
 PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/lib/libhtc_acoustic.so:system/lib/libhtc_acoustic.so \
     vendor/htc/pico/proprietary/lib/libaudio.so:system/lib/libaudio.so \
@@ -182,6 +186,7 @@ PRODUCT_COPY_FILES += \
      vendor/htc/pico/proprietary/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
 
 # Camera
+# I think we need all camera libs from stock
 PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/lib/liboemcamera.so:system/lib/liboemcamera.so \
     vendor/htc/pico/proprietary/lib/libmmipl.so:system/lib/libmmipl.so \
@@ -194,6 +199,7 @@ PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/lib/libscaladoutil.so:system/lib/libscaladoutil.so \
 
 # RIL
+# Fixed, thanks for stock :)
 PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/lib/libril.so:system/lib/libril.so \
     vendor/htc/pico/proprietary/lib/libril_status.so:system/lib/libril_status.so \
@@ -209,6 +215,7 @@ PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/lib/libchromatix_mt9t013_preview.so:system/lib/libchromatix_mt9t013_preview.so \
 
 # OMX & MISC.
+# Under question
 PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/lib/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
     vendor/htc/pico/proprietary/lib/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
@@ -241,6 +248,7 @@ PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/etc/firmware/BCM4330B1_002.001.003.0221.0228.hcd:system/etc/firmware/BCM4330B1_002.001.003.0221.0228.hcd \
 
 # Keylayouts
+# Under question too
 PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
     device/htc/pico/prebuilt/usr/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
